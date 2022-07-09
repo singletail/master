@@ -1,4 +1,11 @@
 node_modules/
+ssl/
+old/
+.env
+
+.eslintrc.json
+.prettierrc
+
 
 # Logs
 logs
