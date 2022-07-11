@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Data">
+    <meta name="author" content="t@wse.nyc">
+    <title>
+        <%= title %>
+    </title>
+    <style type="text/css">
+        html {
+            background: #ffffff url(/all/img/t2.jpg) no-repeat fixed center center;
+            background-size: cover;
+        }
+
+        body {
+            height: 100%;
+        }
+
+        .tit {
+            position: absolute;
+            width: 40%;
+            top: 1%;
+            left: 5%;
+            z-index: 1000;
+            text-align: center;
+            font-family: 'Prompt', sans-serif;
+            color: white;
+            font-size: 14pt;
+        }
+
+        .ass {
+            font-family: '3270', sans-serif;
+            position: absolute;
+            width: 56%;
+            top: 14%;
+            height:36%;
+            left: 21%;
+            z-index: 1000;
+            text-align: left;
+            color: #00ff00;
+            font-size: 0.5rem;
+            font-size: clamp(0.5rem, 0.4285714285714286rem + 1.1428571428571428vw, 1rem);
+        }
+
+        .msg {
+            font-family: '3270', sans-serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: black;
+            line-height: 40%;
+            white-space: nowrap;
+        }
+
+        @font-face {
+            font-family: '3270';
+            font-weight: 100;
+            font-style: normal;
+            src: url('/all/font/3270Medium.woff2') format('woff2');
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tit">
+                <%= title %>
+    </div>
+    <div class="ass">
+                <%= data %>
+    </div>
+</body>
+
+</html>

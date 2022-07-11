@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Base template for Express + authentication and user database",
   "main": "app.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "start": "node app.js",
     "start:watch": "nodemon",
@@ -23,5 +23,28 @@
   "bugs": {
     "url": "https://github.com/singletail/master/issues"
   },
-  "homepage": "https://github.com/singletail/master#readme"
+  "homepage": "https://github.com/singletail/master#readme",
+  "engines": {
+    "node": "16.16.0"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "geoip-lite": "^1.4.5",
+    "jose": "^4.8.3",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.4.4",
+    "morgan": "^1.10.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
+  }
 }
