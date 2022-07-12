@@ -1,13 +1,26 @@
 {
   "name": "master",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Base template for Express + authentication and user database",
-  "main": "app.js",
+  "main": "src/index.js",
+  "author": "Scott Gaertner <t@wse.nyc>",
+  "license": "BSD-4-Clause",
   "type": "commonjs",
+  "engines": {
+    "node": "16.16.0"
+  },
   "scripts": {
-    "start": "node app.js",
-    "start:watch": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "pm2 start env.config.json --no-daemon",
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "test": "jest -i --colors --verbose --detectOpenHandles",
+    "test:watch": "jest -i --watchAll",
+    "coverage": "jest -i --coverage",
+    "coverage:coveralls": "jest -i --coverage --coverageReporters=text-lcov | coveralls",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --check **/*.js",
+    "prettier:fix": "prettier --write **/*.js",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -18,26 +31,39 @@
     "authentication",
     "template"
   ],
-  "author": "t@wse.nyc",
-  "license": "BSD-4-Clause",
   "bugs": {
     "url": "https://github.com/singletail/master/issues"
   },
   "homepage": "https://github.com/singletail/master#readme",
-  "engines": {
-    "node": "16.16.0"
-  },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.4.0",
     "geoip-lite": "^1.4.5",
+    "helmet": "^5.1.0",
+    "http-status": "^1.5.2",
+    "joi": "^17.6.0",
     "jose": "^4.8.3",
-    "mongodb": "^4.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
     "mongoose": "^6.4.4",
     "morgan": "^1.10.0",
-    "uuid": "^8.3.2"
+    "nodemailer": "^6.3.1",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "swagger-jsdoc": "^6.0.8",
+    "swagger-ui-express": "^4.1.6",
+    "uuid": "^8.3.2",
+    "validator": "^13.7.0",
+    "winston": "^3.8.1",
+    "xss": "^1.0.13",
+    "xss-clean": "^0.1.1"
   },
   "devDependencies": {
     "eslint": "^8.19.0",
@@ -45,6 +71,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
     "prettier": "^2.7.1"
   }
 }
