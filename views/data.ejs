@@ -8,80 +8,25 @@
     <title>
         <%= title %>
     </title>
-    <style type="text/css">
-        html {
-            background: #ffffff url(/all/img/brickwall.jpg) no-repeat fixed center center;
-            background-size: cover;
-        }
-
-        body {
-            height: 100%;
-        }
-
-        .term {
-            background: url(/all/img/T3.png) no-repeat fixed top center;
-            background-size: cover;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0px;
-            z-index: 1000;
-            color: #00ff00;
-            display: flex;
-            justify-content: center;
-        }
-
-        .box {
-            position:absolute;
-            top: 9vw;
-            width: 54%;
-            height: 30vw;
-            z-index: 1000;
-            text-align: left;
-            color: rgb(8, 248, 128);
-            min-width: 240px;
-        }
-
-
-        .tit {
-            position:absolute;
-            width:95%;
-            height:90%;
-            z-index: 1000;
-            text-align: left;
-            font-family: '3270', sans-serif;
-            color: #00ff00;
-            font-size: 0.5625rem;
-            font-size: clamp(0.5625rem, 0.39285714285714285rem + 1.1309523809523812vw, 1.75rem);
-   }
-
-
-
-        .msg {
-            font-family: '3270', sans-serif;
-            font-size: 2em;
-            font-weight: 600;
-            color: black;
-            line-height: 40%;
-            white-space: nowrap;
-        }
-
-        @font-face {
-            font-family: '3270';
-            font-weight: 100;
-            font-style: normal;
-            src: url('/all/font/3270Medium.woff2') format('woff2');
-        }
-    </style>
+    <script src="/all/js/jquery-3.6.0.min.js"></script>
+    <script src="/all/js/jquery.terminal.min.js"></script>
+    <script src="/all/js/keyboard.js"></script>
+    <script src="/all/js/wcwidth.js"></script>
+    <link rel="stylesheet" href="/all/css/jquery.terminal.min.css">
+    <link rel="stylesheet" href="/all/css/data.css">
 </head>
 
 <body>
     <div class="term">
         <div class="box">
-            <span class="tit"><%= data %></span>
+            <div class="tit" id="terminal">
+            </div>
+        </div>
     </div>
-    </div>
-<script src="https://cyberpunk.nyc/all/js/jquery-3.6.0.min.js"></script>
 </body>
-
+<script>
+    $(function() {
+        $('#terminal').terminal();
+    });
+</script>
 </html>

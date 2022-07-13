@@ -4,6 +4,7 @@
 .eslintrc.json
 .eslintrc.cjs
 .prettierrc
+package-lock.json
 
 node_modules/
 ssl/

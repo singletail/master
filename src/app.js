@@ -24,7 +24,7 @@ app.use(logger('pretty'));
 app.set('view engine', 'ejs');
 
 // set security HTTP headers
-app.use(helmet());
+//app.use(helmet());
 
 // parse json request body
 app.use(express.json());
@@ -33,7 +33,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // sanitize request data
-app.use(xss());
+// app.use(xss());
 app.use(mongoSanitize());
 
 // gzip compression
