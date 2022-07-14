@@ -1,7 +1,4 @@
-const express = require('express');
 const logger = require('morgan');
-
-// colors: curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash
 
 const colReset = '\x1b[0m';
 
@@ -52,27 +49,27 @@ logger.token('resetCol', function () {
   return `${colReset}`;
 });
 
-logger.token('realIp', function (req, res) {
+logger.token('realIp', function (req) {
   return `${req.realIp}`;
 });
 
-logger.token('city', function (req, res) {
+logger.token('city', function (req) {
   return `${req.city}`;
 });
 
-logger.token('state', function (req, res) {
+logger.token('state', function (req) {
   return `${req.st}`;
 });
 
-logger.token('country', function (req, res) {
+logger.token('country', function (req) {
   return `${req.country}`;
 });
 
-logger.token('latitude', function (req, res) {
+logger.token('latitude', function (req) {
   return `${req.latitude}`;
 });
 
-logger.token('longitude', function (req, res) {
+logger.token('longitude', function (req) {
   return `${req.longitude}`;
 });
 
