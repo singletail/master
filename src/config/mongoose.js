@@ -7,7 +7,7 @@ const { mongo, env } = require('./vars');
 
 // Exit application on error
 mongoose.connection.on('error', (err) => {
-  logger.error(`MongoDB connection error: ${err}`);
+  console.log(`MongoDB connection error: ${err}`);
   process.exit(-1);
 });
 
@@ -25,11 +25,9 @@ if (env === 'development') {
 exports.connect = () => {
   mongoose
     .connect(mongo.uri, {
-      useCreateIndex: true,
-      keepAlive: 1,
+      keepAlive: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useFindAndModify: false,
     })
     .then(() => console.log('mongoDB connected...'));
   return mongoose.connection;
